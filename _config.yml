@@ -22,8 +22,8 @@ title: Khế Blog
 email: khe.starfruit@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Khế Blog lưu trữ nội dung dạng văn bản của tất cả các video trên
-  kênh Youtube Khế. Tác giả của Khế Blog cũng hay đăng các bài Blog
-  không liên quan tới kênh Youtube Khế trên đây.
+  kênh Youtube "Tự học lập trình cùng Khế". Tác giả của Khế Blog cũng hay đăng các bài Blog
+  không liên quan tới kênh Youtube "Tự học lập trình cùng Khế" trên đây.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
