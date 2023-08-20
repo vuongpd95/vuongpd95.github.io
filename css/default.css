@@ -30,7 +30,13 @@ body {
 }
 
 html > body {
-    font-size: 20px;
+    font-size: 17px;
+}
+
+@media only screen and (min-width: 768px) {
+    html > body {
+        font-size: 20px;
+    }
 }
 
 p,
@@ -85,8 +91,8 @@ body {
     max-width: 30em;
     margin: auto;
     padding-top: 4em;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .header nav a:not(:first-child) {
@@ -97,8 +103,8 @@ body {
     max-width: 30em;
     margin: auto;
     padding-bottom: 4em;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 @media only screen and (min-width: 768px) {
