@@ -35,6 +35,7 @@ main = hakyllWith config $ do
         compile $ do
             let ctx =
                     constField "title" "About" `mappend`
+                    youtubeInfo `mappend`
                     defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/about.html" ctx
@@ -58,6 +59,11 @@ main = hakyllWith config $ do
 
 
 --------------------------------------------------------------------------------
+youtubeInfo =
+    constField "youtubeChannelUrl" "https://www.youtube.com/channel/UCxYPvrOjEWnuQoisxmmaBeg" `mappend`
+    constField "youtubeChannelName" "@7Ngay1Tuan" `mappend`
+    constField "youtubeChannelWhy" "/posts/2023-09-19-why-I-have-a-youtube-channel.html"
+
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`

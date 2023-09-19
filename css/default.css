@@ -78,12 +78,14 @@ body {
 
 :link {
     color: #68693f;
+    background-color: #ffc;
     text-decoration: none;
     border-bottom: 1px dotted #ccc;
 }
 
 :visited {
     color: #68693f;
+    background-color: #ffc;
     text-decoration: none;
 }
 
@@ -109,8 +111,7 @@ body {
 
 @media only screen and (min-width: 768px) {
     .header {
-        margin: 0;
-        margin-left: 8em;
+        margin: auto;
         padding-left: 0;
         padding-right: 0;
     }
@@ -118,8 +119,7 @@ body {
     .content {
         padding-left: 0;
         padding-right: 0;
-        margin: 0;
-        margin-left: 8em;
+        margin: auto;
     }
 }
 
@@ -150,6 +150,10 @@ hr + p:first-letter {
     text-decoration: none;
     color: #666;
     border-bottom: 1px dotted;
+}
+
+h2.posttitle {
+    font-weight: 600;
 }
 
 h2.posttitle :link,

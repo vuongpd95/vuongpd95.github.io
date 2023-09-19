@@ -1,6 +1,6 @@
 ---
-title: Tu Quoque
-author: Julius
+title: Why I have a youtube channel
+author: Vuong
 ---
 
 Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
