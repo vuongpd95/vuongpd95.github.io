@@ -3,9 +3,9 @@
 import           Data.Monoid (mappend)
 import           Hakyll
 import           Debug.Trace
+import           qualified I18n
 
 --------------------------------------------------------------------------------
-
 config :: Configuration
 config = defaultConfiguration
     {
@@ -30,16 +30,17 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    create ["about.html"] $ do
+    match "about.html" $ do
         route idRoute
         compile $ do
-            let ctx =
-                    constField "title" "About" `mappend`
+            let aboutCtx =
                     youtubeInfo `mappend`
+                    headerInfo `mappend`
                     defaultContext
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/about.html" ctx
-                >>= loadAndApplyTemplate "templates/default.html" ctx
+
+            getResourceBody
+                >>= applyAsTemplate aboutCtx
+                >>= loadAndApplyTemplate "templates/default.html" aboutCtx
                 >>= relativizeUrls
 
     match "index.html" $ do
@@ -48,6 +49,7 @@ main = hakyllWith config $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
+                    headerInfo `mappend`
                     defaultContext
 
             getResourceBody
@@ -59,6 +61,16 @@ main = hakyllWith config $ do
 
 
 --------------------------------------------------------------------------------
+lang :: String
+lang = "vi"
+
+headerInfo =
+    constField "aboutPageTitle" (I18n.t lang "about") `mappend`
+    constField "aboutPageUrl" "/about.html" `mappend`
+    constField "homePageTitle" (I18n.t lang "home") `mappend`
+    constField "homePageUrl" "/"
+
+
 youtubeInfo =
     constField "youtubeChannelUrl" "https://www.youtube.com/channel/UCxYPvrOjEWnuQoisxmmaBeg" `mappend`
     constField "youtubeChannelName" "@7Ngay1Tuan" `mappend`
@@ -67,4 +79,5 @@ youtubeInfo =
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
+    headerInfo `mappend`
     defaultContext
