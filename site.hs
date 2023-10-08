@@ -49,6 +49,7 @@ main = hakyllWith config $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
+                    youtubeInfo `mappend`
                     headerInfo `mappend`
                     defaultContext
 
@@ -74,7 +75,8 @@ headerInfo =
 youtubeInfo =
     constField "youtubeChannelUrl" "https://www.youtube.com/channel/UCxYPvrOjEWnuQoisxmmaBeg" `mappend`
     constField "youtubeChannelName" "@7Ngay1Tuan" `mappend`
-    constField "youtubeChannelWhy" "/posts/2023-09-19-why-I-have-a-youtube-channel.html"
+    constField "youtubeChannelWhy" "/posts/2023-09-19-why-I-have-a-youtube-channel.html" `mappend`
+    constField "youtubeChannelImage" "/images/youtube-channel.png"
 
 postCtx :: Context String
 postCtx =
