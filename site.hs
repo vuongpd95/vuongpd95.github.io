@@ -76,7 +76,8 @@ youtubeInfo =
     constField "youtubeChannelUrl" "https://www.youtube.com/channel/UCxYPvrOjEWnuQoisxmmaBeg" `mappend`
     constField "youtubeChannelName" "@7Ngay1Tuan" `mappend`
     constField "youtubeChannelWhy" "/posts/2023-09-19-why-I-have-a-youtube-channel.html" `mappend`
-    constField "youtubeChannelImage" "/images/youtube-channel.png"
+    constField "youtubeChannelImage" "/images/youtube-channel.png" `mappend`
+    constField "youtubeChannelEmail" "7ngay1tuan@vpham.xyz"
 
 postCtx :: Context String
 postCtx =
